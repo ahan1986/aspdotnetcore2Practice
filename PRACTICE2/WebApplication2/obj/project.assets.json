@@ -12225,11 +12225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahan\\source\\repos\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "C:\\Users\\ahan\\source\\repos\\aspdotnetcore2Practice\\PRACTICE2\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "C:\\Users\\ahan\\source\\repos\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+      "projectPath": "C:\\Users\\ahan\\source\\repos\\aspdotnetcore2Practice\\PRACTICE2\\WebApplication2\\WebApplication2.csproj",
       "packagesPath": "C:\\Users\\ahan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahan\\source\\repos\\WebApplication2\\WebApplication2\\obj\\",
+      "outputPath": "C:\\Users\\ahan\\source\\repos\\aspdotnetcore2Practice\\PRACTICE2\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

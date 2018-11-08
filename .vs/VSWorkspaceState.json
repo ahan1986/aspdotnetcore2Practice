@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\aspdotnetcore2Practice",
-    "\\aspdotnetcore2Practice\\Pages",
-    "\\aspdotnetcore2Practice\\Properties"
+    "\\PRACTICE2",
+    "\\PRACTICE2\\WebApplication2"
   ],
-  "SelectedNode": "\\aspdotnetcore2Practice\\Pages\\Index.cshtml",
+  "SelectedNode": "\\PRACTICE2\\WebApplication2\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }
