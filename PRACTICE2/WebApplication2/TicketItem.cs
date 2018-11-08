@@ -8,7 +8,7 @@ namespace WebApplication2
 {
     public class TicketItem
     {
-        public long id { get; set; }
+        public object Id { get; internal set; }
         public string Concert { get; set; }
         public string Artist { get; set; }
         public bool Available { get; set; }
