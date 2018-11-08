@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication2.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/[Controller]")]
     [ApiController]
     public class TicketController : ControllerBase
     {
@@ -36,7 +36,7 @@ namespace WebApplication2.Controller
        public IActionResult GetById(long id)
         {
             // going to find the ticket id that we have searched for or passed in. Need FirstOrDefault because if we dont' find anything it will default ticket that is null and doesnt contain anything.
-            var ticket = _context.TicketItems.FirstOrDefault(t => t.id == id);
+            var ticket = _context.TicketItems.FirstOrDefault(t => t.Id == id);
 
             if(ticket == null)
             {
@@ -45,8 +45,9 @@ namespace WebApplication2.Controller
             return new ObjectResult(ticket); //200
         }
 
-        // To add one in the database
-        public IActionResult Create(TicketItem ticket)
+        // To add one in the database. Using the FromBody just like node req.body(which gets object in json form to the model into the database. Just like how you set up mongodb in node).
+        [HttpPost]
+        public IActionResult Create([FromBody]TicketItem ticket)
         {
             if(ticket == null)
             {
@@ -54,8 +55,8 @@ namespace WebApplication2.Controller
             }
             _context.TicketItems.Add(ticket);
             _context.SaveChanges();
-            // createdAtRoute changes the route name of the information you want with "GetTicket" to hide it from the viewers. Then we are adding an id to the database, but here you can also add whatever you want here to the model blue print
-            return CreatedAtRoute("GetTicket", new { id = ticket.Id }); 
+            // createdAtRoute changes the route name of the information you want with "GetTicket" to hide it from the viewers. Then we are adding an id to the database, but here you can also add whatever you want here to the model blue print. Last argu ticket is what you're passing on to the one you just made such as object in json form.
+            return CreatedAtRoute("GetTicket", new { id = ticket.Id }, ticket); 
         }
     }
 }
