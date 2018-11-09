@@ -59,7 +59,8 @@ namespace WebApplication2.Controller
             return CreatedAtRoute("GetTicket", new { id = ticket.Id }, ticket); 
         }
 
-        // get the Id of the one that we want to update from the database and then change it to TicketItem ticket from [FromBody]
+        // get the Id of the one that we want to update from the database and then change it to TicketItem ticket from [FromBody].  Without [HttpPut], it's going to a default "get" request
+        [HttpPut("{id}")]
         public IActionResult Update(long Id, [FromBody] TicketItem ticket)
         {
             // if ticket doesnt exist or that ticket doenst match the id you asked for
@@ -79,7 +80,14 @@ namespace WebApplication2.Controller
             tic.Artist = ticket.Artist;
             _context.TicketItems.Update(tic);
             _context.SaveChanges();
-            return new NoContentResult();
+            return new NoContentResult(); 
+        }
+
+        // make the HttpDelete specify that an id is
+        [HttpDelete]
+        public IActionResult Delete(long id)
+        {
+
         }
 
     }
