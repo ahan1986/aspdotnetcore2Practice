@@ -14,7 +14,10 @@ namespace WebApplication2
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            Console.WriteLine();
+            Console.Write("Hello from the practice world!");
+            Console.ReadLine();
+            //CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

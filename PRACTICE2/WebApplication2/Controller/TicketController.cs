@@ -84,11 +84,6 @@ namespace WebApplication2.Controller
         }
 
         // make the HttpDelete specify that an id is
-        [HttpDelete]
-        public IActionResult Delete(long id)
-        {
-
-        }
-
+      
     }
 }
