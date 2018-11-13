@@ -3,4 +3,17 @@
 @{
 }
 <h2>Hello from razor page!</h2>
+<br />
 <h3>@Model.someData</h3>
+<br />
+@*creating a button here to store books in the database which will be created soon*@
+<a asp-page="Create" class="btn btn-primary">Create New Book</a>
+
+<br />
+
+@if (Model.Books.Count() > 0)
+{
+    <div> Books Available! </div>
+} else {
+    <div> No Books in Databse. </div>
+}
