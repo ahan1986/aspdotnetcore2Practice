@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CRUD_RAZOR_2_1.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUD_RAZOR_2_1.Pages.BookList
 {
@@ -26,10 +27,10 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
         
 
         // this model can only pass data to the View which will be the index.cshtml.cs in the BookList folder in the pages folder
-        public void OnGet() // this is a handler. This will be executed when a GET request comes in 
+        public async Task OnGet() // this is a handler. This will be executed when a GET request comes in 
         {
             //someData = "This is the first property";
-
+            Books = await _db.Books.ToListAsync();
         }
     }
 }
