@@ -16,7 +16,7 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
 
         //to use the Book Model in our database, we need to acess our database by having the object of ApplicationDbContext here and defining a variable e.g. someData. dependency injection for CRUD_RAZOR_2_1.Model. Set this variable private so that no other classes can use it.
         private readonly ApplicationDbContext _db;
-        // to retrieve the data, we create a list of books so we need IEnumerable
+        // to retrieve the complete list of data, we create a list of books so we need IEnumerable
         public IEnumerable<Book> Books { get; set; }
         //create constructor. This is a boiler plate so that the local db can be used.
         public IndexModel(ApplicationDbContext db)
