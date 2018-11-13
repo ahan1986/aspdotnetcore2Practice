@@ -33,7 +33,7 @@ namespace CRUD_RAZOR_2_1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            // add services to connect database.  ApplicationDbContext is our model that we want to hook up and then in the params you set options to connect sqlserver using UseSqlServer from entity frameworkcore. In the UserSqlServer's param you defined the connectionstring that was defined in appsettings.json as the default connections.
+            // add services to connect database.  ApplicationDbContext is our model that we want to hook up and then in the params you set options to connect sqlserver using UseSqlServer from entity frameworkcore. In the UserSqlServer's param you defined the connectionstring that was defined in appsettings.json as the default connections. *Remember that Iconfiguration brings in the appsettings.json to this file
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
