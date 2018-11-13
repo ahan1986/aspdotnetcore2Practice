@@ -15,9 +15,25 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
         {
             _db = db;
         }
+        // creating one book at a time
+        public Book Book { get; set; }
 
         public void OnGet()
         {
+
+        }
+        // if you don't add the parameters (Book Book), you can also add [BindProperty] to public Book Book { get; set; }. This will bind Book to everything in this class
+        public async Task<IActionResult> OnPost(Book Book)
+        {
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
+            //you're grabbing Book defined in params and adding it to the database. Then you have to always SaveChangesAsync() this is saving the changes to the database. So you have to manually add it and then tell it to save it.
+            _db.Books.Add(Book);
+            await _db.SaveChangesAsync();
+            // Redirect to the Index section method. To Index page because thats where we will be displaying all the books.
+            return RedirectToPage("Index");
 
         }
     }
