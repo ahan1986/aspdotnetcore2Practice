@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CRUD_RAZOR_2_1.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,6 +33,8 @@ namespace CRUD_RAZOR_2_1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // add services to connect database.  ApplicationDbContext is our model that we want to hook up and then in the params you set options to connect sqlserver using UseSqlServer from entity frameworkcore. In the UserSqlServer's param you defined the connectionstring that was defined in appsettings.json as the default connections.
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
