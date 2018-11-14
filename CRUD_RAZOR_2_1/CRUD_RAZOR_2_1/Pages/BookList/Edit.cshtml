@@ -11,6 +11,9 @@
     <form method="post">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*Error: NullReferenceException: Object reference not set to an instance of an object.  Therefore you'll need the following line.  If you remember, in order to send id BACK to the controller, you need to have asp-for which will give you the "name" and the empty value.  With this information the controller can make the changes to the specific Book.  This also has to be inbetwen the <form> tag*@
+        <input hidden asp-for="Book.Id" />
+
         <div class="row" style="padding-left: 15px; padding-top: 30px;">
             <div class="form-group">
                 <div class="row">
