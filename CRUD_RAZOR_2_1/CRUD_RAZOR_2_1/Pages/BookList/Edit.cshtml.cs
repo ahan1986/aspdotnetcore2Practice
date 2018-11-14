@@ -22,10 +22,10 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
         [TempData]
         public string Message { get; set; }
 
-        // on the get we need to retrieve the book based on the id
-        public void OnGet(int id)
+        // on the get we need to retrieve the book based on the id. Located on the Index.cshtml page on the edit button. asp-route-hello which equals item.Id.  The route gets sent here with the route-hello and that is the param such as req.body.  OnGet will grab that data from the database.
+        public void OnGet(int hello)
         {
-            Book = _db.Books.Find(id);
+            Book = _db.Books.Find(hello);
         }
 
         public async Task<IActionResult> OnPost()
