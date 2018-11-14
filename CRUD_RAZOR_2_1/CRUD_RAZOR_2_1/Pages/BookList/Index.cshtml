@@ -6,6 +6,18 @@
 <br />
 <h3>@Model.someData</h3>
 <br />
+
+@if(Model.Message != null)
+{
+    <div contenteditable="alert alert-info alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        @Model.Message
+    </div>
+}
+
+
 @*creating a button here to store books in the database which will be created soon. The below is an anchor tag that uses bootstraps btn class to make it look like a button. The tag helper asp-page links where the page or the link/button will go to. So it goes to /BookList/Create*@
 <a asp-page="Create" class="btn btn-primary">Create New Book</a>
 
@@ -30,7 +42,7 @@
     {
         <tr>
             <th>
-                @Html.DisplayNameFor(m => item.Name)
+                @Html.DisplayFor(m => item.Name)
             </th>
         
             <th>

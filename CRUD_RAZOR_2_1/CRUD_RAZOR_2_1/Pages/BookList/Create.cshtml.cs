@@ -12,7 +12,7 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
     {
         private readonly ApplicationDbContext _db;
 
-        //tempData section from the tutorial.  This is to set a message to the user after they have created a book.
+        //tempData section from the tutorial.  This is to set a message to the user after they have created a book. After creating this you have to make the same thing in the index.cshtml.cs controller.
         [TempData]
         public string Message { get; set; }
 
