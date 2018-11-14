@@ -9,22 +9,49 @@
 <div style="border: 1px solid #bbb9b9; border-radius: 10px;">
     @* the form Tage helper along with the post method*@
     <form method="post">
+
         <div class="row" style="padding-left: 15px; padding-top: 30px;">
-            <div class="row">
-                <div class="col-sm-1">
-                    <label asp-for="Book.Name">@Model.Book</label>
-                </div>
-                <div  class="col-sm-4">
-                    @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
-                    <input asp-for="Book.Name" class="form-control" /> 
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Book.Name"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
+                        <input asp-for="Book.Name" class="form-control" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <br />
-        <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary btn-sm" />
-            <a asp-page="Index" class="btn btn-success btn-sm">Back to List</a>
-        </div>
-    </form>
 
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Book.ISBN"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
+                        <input asp-for="Book.ISBN" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label asp-for="Book.Author"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
+                        <input asp-for="Book.Author" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                <a asp-page="Index" class="btn btn-success btn-sm">Back to List</a>
+            </div>
+        </div>
+        
+    </form>
 </div>
