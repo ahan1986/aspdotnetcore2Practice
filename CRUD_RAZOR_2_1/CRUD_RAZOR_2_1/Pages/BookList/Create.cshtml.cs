@@ -35,7 +35,6 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
             await _db.SaveChangesAsync();
             // Redirect to the Index section method. To Index page because thats where we will be displaying all the books.
             return RedirectToPage("Index");
-
         }
     }
 }
