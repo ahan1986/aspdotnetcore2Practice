@@ -40,13 +40,12 @@
                     @Html.DisplayNameFor(m => m.Books.FirstOrDefault().Author)
                 </th>
             </tr>
-            @foreach (var item in Model.Books)
+            @foreach (var item in Model.Books) 
             {
                 <tr>
                     <th>
                         @Html.DisplayFor(m => item.Name)
                     </th>
-
                     <th>
                         @Html.DisplayFor(m => item.ISBN)
                     </th>
@@ -55,7 +54,7 @@
                     </th>
                     <th>
                         @*this button will target a Delete method/hander in the controller. we will grab the id of the book we want to delete. asp-route-whateverNameYouWant="item.Id" the asp-route-variable has to be the same as the one you call it in the controller*@
-                        <button asp-page-handler="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</button>
+                        <button asp-page-handler="Delete" asp-route-whateverYouWant="@item.Id" class="btn btn-danger btn-sm">Delete</button>
                     </th>
                 </tr>
             }

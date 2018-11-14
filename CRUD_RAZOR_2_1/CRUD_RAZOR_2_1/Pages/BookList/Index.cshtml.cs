@@ -28,16 +28,26 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
         {
             _db = db;
         }
-         
-        
+
 
         // this model can only pass data to the View which will be the index.cshtml.cs in the BookList folder in the pages folder
         public async Task OnGet() // this is a handler. This will be executed when a GET request comes in 
         {
             someData = "This is the first property";
 
-
             Books = await _db.Books.ToListAsync();
+        }
+
+        // OnPostDelete. The params are whatever you called it in the razor page which is from asp-route-*whateverYouWant*="@item.Id" 
+        public async Task<IActionResult> OnPostDelete(int whateverYouWant)
+        {
+            var book = await _db.Books.FindAsync(whateverYouWant);
+            _db.Books.Remove(book);
+            await _db.SaveChangesAsync();
+
+            Message = "Book deleted successfully!";
+
+            return RedirectToPage("Index");
         }
     }
 }
