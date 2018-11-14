@@ -13,7 +13,37 @@
 
 @if (Model.Books.Count() > 0)
 {
-    <div> Books Available! </div>
-} else {
+<table class="table">
+    <tr>
+        @*the below 3 tags are for headers for this table which is always followed by a foreach to display the data in each column of the table*@
+        <th>
+            @Html.DisplayNameFor(m => m.Books.FirstOrDefault().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Books.FirstOrDefault().ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Books.FirstOrDefault().Author)
+        </th>
+    </tr>
+    @foreach (var item in Model.Books)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(m => item.Name)
+            </th>
+        
+            <th>
+                @Html.DisplayFor(m => item.ISBN)
+            </th>
+            <th>
+                @Html.DisplayFor(m => item.Author)
+            </th>
+        </tr>
+    }
+</table>
+}
+else
+{
     <div> No Books in Databse. </div>
 }
