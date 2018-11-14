@@ -10,6 +10,7 @@
     @* the form Tage helper along with the post method*@
     <form method="post">
 
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row" style="padding-left: 15px; padding-top: 30px;">
             <div class="form-group">
                 <div class="row">
@@ -20,6 +21,7 @@
                         @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
                         <input asp-for="Book.Name" class="form-control" />
                     </div>
+                    <span asp-validation-for="Book.Name" class="text-danger"></span>
                 </div>
             </div>
 
@@ -32,6 +34,7 @@
                         @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
                         <input asp-for="Book.ISBN" class="form-control" />
                     </div>
+                    <span asp-validation-for="Book.ISBN" class="text-danger"></span>
                 </div>
             </div>
 
@@ -44,6 +47,7 @@
                         @*Book.Name is binding the "book" method in the Controller and the "Name" in the model connected to it. This is how you add values to the database through the view.  When you look at the HTML page for this tag you will see that there is a "name" attribute. This name is the variable that sends the information the user inputed to the controller*@
                         <input asp-for="Book.Author" class="form-control" />
                     </div>
+                    <span asp-validation-for="Book.Author" class="text-danger"></span>
                 </div>
             </div>
             <br />
@@ -55,3 +59,7 @@
         
     </form>
 </div>
+
+@section Scripts{ 
+    @{await Html.RenderPartialAsync("_ValidationScriptsParital");}
+}
