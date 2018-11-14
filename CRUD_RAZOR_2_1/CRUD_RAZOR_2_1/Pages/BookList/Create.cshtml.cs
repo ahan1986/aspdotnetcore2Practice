@@ -16,13 +16,14 @@ namespace CRUD_RAZOR_2_1.Pages.BookList
             _db = db;
         }
         // creating one book at a time
+        // **[BindProperty] ** if you don't want to add Book Book to a parameter to OnGet or OnPost methods.
         public Book Book { get; set; }
 
         public void OnGet()
         {
 
         }
-        // if you don't add the parameters (Book Book), you can also add [BindProperty] to public Book Book { get; set; }. This will bind Book to everything in this class
+        // ** if you don't add the parameters (Book Book), you can also add [BindProperty] to public Book Book { get; set; }. This will bind Book to everything in this class
         public async Task<IActionResult> OnPost(Book Book)
         {
             if(!ModelState.IsValid)
